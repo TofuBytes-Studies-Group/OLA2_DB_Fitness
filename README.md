@@ -74,8 +74,6 @@ Vi har tilføjet nogle ekstra funktioner, blandt andet har vi tilføjet medlemme
 
 ## Dokumentation på normalisering ( kort forklaring og tabel der viser ændringer )
 
-Giv eksempler på hvornår 2. og 3. normalform er brudt
-
 #### 1NF: Sikr jer, at alle attributter er atomare og at der ikke er gentagne grupper.
 
 Dette har vi lavet i vores ER-diagram ovenover.
@@ -153,64 +151,7 @@ For eksempel har vi forbedret tabellen HOLD_INSTRUKTORER ved at fjerne en unødv
 
 #### 3NF: Fjern transitive afhængigheder (sørg for, at alle ikke-nøgle attributter kun afhænger af primærnøglen).
 
-```mermaid
-erDiagram
-    MEDLEMSKABER {
-        INT id PK
-        VARCHAR(50) navn
-        TEXT beskrivelse
-        DECIMAL(102) pris
-    }
-    
-    MEDLEMMER {
-        INT id PK
-        VARCHAR(100) navn
-        VARCHAR(100) email 
-        INT medlemskab_id FK
-        DATE oprettet_date
-    }
-    
-    TRAENINGSHOLD {
-        INT id PK
-        VARCHAR(50) navn
-        TEXT beskrivelse
-        INT max_deltagere
-    }
-    
-    INSTRUKTORER {
-        INT id PK
-        VARCHAR(100) navn
-        VARCHAR(100) email 
-    }
-    
-    HOLD_INSTRUKTORER {
-        INT traeningshold_id PK, FK
-        INT instruktor_id PK, FK
-    }
-    
-    BOOKING {
-        INT id PK
-        INT medlem_id FK
-        INT traeningshold_id FK
-        TIMESTAMP dato
-    }
-    
-    BETALING {
-        INT id PK
-        INT medlem_id FK
-        VARCHAR(50) type
-        DECIMAL(102) beloeb
-        TIMESTAMP betalingsdato
-    }
-    
-    MEDLEMSRABATTER {
-        INT id PK
-        INT medlem_id FK
-        DECIMAL(52) rabat_procent
-        DATE gyldig_fra
-        DATE gyldig_til
-    }
-```
+Ovenover dækker også forsøget på at opretholded 3. normalform.
 
 Ændringer: 
 - I de nu normaliserede tabeller afhænger hver ikke-nøgleattribut direkte af primærnøglen.
