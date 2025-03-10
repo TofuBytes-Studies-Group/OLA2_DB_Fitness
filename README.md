@@ -5,10 +5,13 @@ Skrevet af: Isak Møgelvang, Jamie Callan og Helena Lykstoft
 
 ## ER-Diagram
 
-Vi har lavet dette ER-diagram, hvor vi nedenunder har beskrevet de entiteter og attributter vi har tænkt skulle være med. Derudover har vi også lavet relationerne
+Vi har lavet dette ER-diagram, hvor vi nedenunder har beskrevet de entiteter og attributter vi har tænkt skulle være med. Derudover har vi også lavet relationerne.
+
 
 #### Billede og beskrivelse
 Hvilke overvejelser har vi gjort os undervejs?
+
+Vi har tilføjet nogle ekstra funktioner, blandt andet har vi...
 
 ## Dokumentation på normalisering ( kort forklaring og tabel der viser ændringer )
 
