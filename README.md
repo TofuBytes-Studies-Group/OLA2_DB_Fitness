@@ -242,8 +242,6 @@ Attributterne medlemskab_navn og medlemskab_pris afhænger af medlemskab_id og e
 
 ## Den relationelle model
 
-Mapping til relationel database: Definér relationerne mellem entiteter
-
 #### Billeder og eksempler
 Resultatet som en relationsmodel:
 
@@ -256,5 +254,78 @@ BOOKING (id PK, medlem_id FK, traeningshold_id FK, dato TIMESTAMP)
 BETALING (id PK, medlem_id FK, type VARCHAR(50), beloeb DECIMAL(102), betalingsdato TIMESTAMP)
 MEDLEMSRABATTER (id PK, medlem_id FK, rabat_procent DECIMAL(52), gyldig_fra DATE, gyldig_til DATE)
 
-Her er relationsmodellen til dette script: 
+Her er relationsmodellen til dette script: [Script fil](fitness_assignment.sql)
 
+Og her er vores færdige model med mapping, relationer, PK og FK osv: 
+
+```mermaid
+erDiagram
+    MEDLEMSKABER {
+        INT id PK
+        VARCHAR(50) navn
+        TEXT beskrivelse
+        DECIMAL(102) pris
+    }
+    
+    MEDLEMMER {
+        INT id PK
+        VARCHAR(100) navn
+        VARCHAR(100) email 
+        INT medlemskab_id FK
+        DATE oprettet_date
+        }
+        
+    TRAENINGSHOLD {
+        INT id PK
+        VARCHAR(50) navn
+        TEXT beskrivelse
+        INT max_deltagere
+    }
+    
+    INSTRUKTORER {
+        INT id PK
+        VARCHAR(100) navn
+        VARCHAR(100) email 
+    }
+    
+    HOLD_INSTRUKTORER {
+        INT id PK
+        INT traeningshold_id FK
+        INT instruktor_id FK
+    }
+    
+    BOOKING {
+        INT id PK
+        INT medlem_id FK
+        INT traeningshold_id FK
+        TIMESTAMP dato
+    }
+    
+    BETALING {
+        INT id PK
+        INT medlem_id FK
+        VARCHAR(50) type
+        DECIMAL(102) beloeb
+        TIMESTAMP betalingsdato
+    }
+    
+    MEDLEMSRABATTER {
+        INT id PK
+        INT medlem_id FK
+        DECIMAL(52) rabat_procent
+        DATE gyldig_fra
+        DATE gyldig_til
+    }
+    
+    MEDLEMSKABER ||--o{ MEDLEMMER : "har"
+    
+    MEDLEMMER ||--o{ BOOKING : "booker"
+TRAENINGSHOLD ||--o{ BOOKING : "har"
+    
+    MEDLEMMER ||--o{ BETALING : "foretager"
+    
+    MEDLEMMER ||--o{ MEDLEMSRABATTER : "har"
+    
+TRAENINGSHOLD ||--o{ HOLD_INSTRUKTORER : "har"
+    INSTRUKTORER ||--o{ HOLD_INSTRUKTORER : "tilknyttet"
+```
