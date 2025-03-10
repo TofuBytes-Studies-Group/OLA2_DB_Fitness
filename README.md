@@ -173,7 +173,9 @@ erDiagram
 Hvis vi antager, at den sammensatte nøgle er medlems_id og medlemskab_id, afhænger attributterne medlem_navn, medlem_email og oprettet_date kun af medlems_id – altså en del af den sammensatte nøgle og ikke af hele nøglen.
 
 - 3NF-brud:
-Attributterne medlemskab_navn og medlemskab_pris afhænger af medlemskab_id og er dermed transitivt afhængige af den sammensatte nøgle, hvilket skaber redundans og potentielle opdateringsproblemer. Andet Eksempel er i modellerne ovenover der går fra at have Intruktørenes navn og Email inde i træningshold's tabellen som senere bliver trukket ud i sin egen tabel som resultat tillader en nemmere 1 til mange relation da 1 intstruktør kan have flere hold og vice versa. Dette kan observeres ved at betragte de førnævnte modeller ovenover i rækkefølgen de er sat ind.
+Attributterne medlemskab_navn og medlemskab_pris afhænger af medlemskab_id og er dermed transitivt afhængige af den sammensatte nøgle, hvilket skaber redundans og potentielle opdateringsproblemer.
+
+**Andet Eksempel på opfyldning af 3NF** er i modellerne ovenover der går fra at have Intruktørenes navn og Email inde i træningshold's tabellen som senere bliver trukket ud i sin egen tabel som resultat tillader en nemmere 1 til mange relation da 1 intstruktør kan have flere hold og vice versa. Dette kan observeres ved at betragte de førnævnte modeller ovenover i rækkefølgen de er sat ind.
 
 
 ## Den relationelle model
