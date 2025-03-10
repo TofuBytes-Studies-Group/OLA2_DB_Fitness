@@ -192,7 +192,7 @@ BOOKING (id PK, medlem_id FK, traeningshold_id FK, dato TIMESTAMP)
 BETALING (id PK, medlem_id FK, type VARCHAR(50), beloeb DECIMAL(102), betalingsdato TIMESTAMP)
 MEDLEMSRABATTER (id PK, medlem_id FK, rabat_procent DECIMAL(52), gyldig_fra DATE, gyldig_til DATE)
 
-Her er relationsmodellen til dette script: [Script fil](fitness_assignment.sql)
+Her er relationsmodellen til dette script: [Script fil](fitness_assignmentOLA.sql)
 
 Og her er vores færdige model med mapping, relationer, PK og FK osv: 
 
