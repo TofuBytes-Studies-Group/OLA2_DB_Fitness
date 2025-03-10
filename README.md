@@ -31,12 +31,8 @@ erDiagram
         VARCHAR(50) navn
         TEXT beskrivelse
         INT max_deltagere
-    }
-    
-    INSTRUKTORER {
-        INT id
-        VARCHAR(100) navn
-        VARCHAR(100) email
+        VARCHAR(100) instruktor_navn
+        VARCHAR(100) instruktor_email
     }
     
     BOOKING {
@@ -67,7 +63,6 @@ erDiagram
     MEDLEMMER ||--o{ BETALING : "foretager"
     MEDLEMMER ||--o{ TRAENINGSHOLD : "deltage"
     MEDLEMMER ||--o{ MEDLEMSRABATTER : "kan modtage"
-    TRAENINGSHOLD }o--o{ INSTRUKTORER : "har"
 ```
 
 Vi har tilføjet nogle ekstra funktioner, blandt andet har vi tilføjet medlemmer, da vi synes det gav mening at et fitnesscenter har medlemmer. Vi har sat at medlemmer har medlemskab, medlemmer har bookings, medlemmer foretager betaling, medlemmer deltager i et træningshold, medlemmer kan modtage medlemsrabatter og træningshold har instruktører. Derudover har vi også lavet de forskellige entiteter og attributter.
@@ -151,7 +146,7 @@ For eksempel har vi forbedret tabellen HOLD_INSTRUKTORER ved at fjerne en unødv
 
 #### 3NF: Fjern transitive afhængigheder (sørg for, at alle ikke-nøgle attributter kun afhænger af primærnøglen).
 
-Ovenover dækker også forsøget på at opretholded 3. normalform.
+Diagrammet Ovenover dækker også forsøget på at opretholded 3. normalform.
 
 Ændringer: 
 - I de nu normaliserede tabeller afhænger hver ikke-nøgleattribut direkte af primærnøglen.
