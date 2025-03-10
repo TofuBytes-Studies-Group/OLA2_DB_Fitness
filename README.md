@@ -219,7 +219,7 @@ erDiagram
 
 Nu opfylder modellen alle normalformer.
 
-Eksempel på hvornår 2NF og 3NF er brudt:
+#### Eksempel på hvornår 2NF og 3NF er brudt:
 
 ```mermaid
 erDiagram
